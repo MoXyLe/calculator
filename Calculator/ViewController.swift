@@ -74,7 +74,9 @@ class ViewController: UIViewController {
         
         switch label {
             
-        case "=": if numbers.count == 0 || operations.count == 0{
+        case "" where sender.currentImage == UIImage(named: "Equal.png"):
+            
+            if numbers.count == 0 || operations.count == 0{
             
                 break
             
@@ -166,7 +168,7 @@ class ViewController: UIViewController {
         
             operations = ["="]
             
-        case _ where sender.currentImage != nil:
+        case "" where sender.currentImage == UIImage(named: "Untitled.png"):
             
             if textLabel.text == nil || textLabel.text == "" {
                 
@@ -188,7 +190,7 @@ class ViewController: UIViewController {
         
             textLabel.text = ""
             
-        case "÷":
+        case "" where sender.currentImage == UIImage(named: "Деление.png"):
             
             if textLabel.text == nil || textLabel.text == "" {
                 
@@ -210,7 +212,7 @@ class ViewController: UIViewController {
         
             textLabel.text = ""
             
-        case "+":
+        case "" where sender.currentImage == UIImage(named: "Krest.png"):
             
             if textLabel.text == nil || textLabel.text == "" {
                 
@@ -232,7 +234,7 @@ class ViewController: UIViewController {
         
             textLabel.text = ""
             
-        case "-":
+        case "" where sender.currentImage == UIImage(named: "Line.png"):
             
             if textLabel.text == nil || textLabel.text == "" {
                 
