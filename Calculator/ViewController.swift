@@ -33,35 +33,7 @@ class ViewController: UIViewController {
     
     @IBAction func number(_ sender: UIButton) {
         
-        if operations != [] && operations[0] == "=" {
-            
-            textLabel.text = ""
-            
-            operations = []
-            
-        }
-        
-        if sender.titleLabel?.text == "π" {
-            
-            textLabel.text = String(Double.pi)
-            
-        } else if sender.currentImage == UIImage(named: "PlusMinus.png") {
-            
-            if (textLabel.text?.hasPrefix("-"))! {
-                
-                textLabel.text?.remove(at: (textLabel.text?.startIndex)!)
-                
-            } else {
-                
-                textLabel.text?.insert("-", at: (textLabel.text?.startIndex)!)
-                
-            }
-            
-        } else {
-            
-            textLabel.text?.append((sender.titleLabel?.text)!)
-            
-        }
+        addNumbers(sender, textLabel)
         
     }
     

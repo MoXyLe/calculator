@@ -240,3 +240,37 @@ func performOperation(_ sender: UIButton, _ textLabel: UILabel) {
     }
 
 }
+
+func addNumbers(_ sender: UIButton, _ textLabel: UILabel) {
+    
+    if operations != [] && operations[0] == "=" {
+        
+        textLabel.text = ""
+        
+        operations = []
+        
+    }
+    
+    if sender.titleLabel?.text == "π" {
+        
+        textLabel.text = String(Double.pi)
+        
+    } else if sender.currentImage == UIImage(named: "PlusMinus.png") {
+        
+        if (textLabel.text?.hasPrefix("-"))! {
+            
+            textLabel.text?.remove(at: (textLabel.text?.startIndex)!)
+            
+        } else {
+            
+            textLabel.text?.insert("-", at: (textLabel.text?.startIndex)!)
+            
+        }
+        
+    } else {
+        
+        textLabel.text?.append((sender.titleLabel?.text)!)
+        
+    }
+
+}
