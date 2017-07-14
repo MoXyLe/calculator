@@ -36,8 +36,10 @@ class ViewController: UIViewController {
     @IBAction func number(_ sender: UIButton) {
         
         if operations != [] && operations[0] == "="{
+            
             textLabel.text = ""
             operations = []
+            
         }
         
         textLabel.text?.append((sender.titleLabel?.text)!)
@@ -57,58 +59,78 @@ class ViewController: UIViewController {
     
     
     @IBAction func operation(_ sender: UIButton) {
+        
         let label: String
         
         if let newLabel = sender.titleLabel?.text {
+            
             label = newLabel
+            
         } else {
+            
             label = ""
+            
         }
         
         switch label {
             
         case "=": if numbers.count == 0 || operations.count == 0{
+            
                 break
+            
             }
         
             if operations.count == 1 && operations[0] == "=" {
+                
                 break
+                
             }
         
-        if textLabel.text == nil || textLabel.text == "" {
-            break
-        }
+            if textLabel.text == nil || textLabel.text == "" {
+            
+                break
+            
+            }
         
             for i in 1...numbers.count {
                 
                 if i == 1 && operations.count > 1 {
                     
                     switch operations[i - 1] {
+                        
                         case "*": equal = numbers[i - 1]
                         case "/": equal = numbers[i - 1]
                         case "+": equal = numbers[i - 1]
                         case "-": equal = numbers[i - 1]
+                        
                     default: break
+                        
                     }
                     
                 } else if i == 1 && operations.count == 1{
                     
                     switch operations[i - 1] {
+                        
                         case "*": equal = numbers[i - 1] * Double(textLabel.text!)!
                         case "/": equal = numbers[i - 1] / Double(textLabel.text!)!
                         case "+": equal = numbers[i - 1] + Double(textLabel.text!)!
                         case "-": equal = numbers[i - 1] - Double(textLabel.text!)!
+                        
                     default: break
+                        
                     }
                     
                 } else {
                     
-                    switch operations[i - 2] {      // Крашится, надо пофиксить
+                    switch operations[i - 2] {
+
                         case "*": equal *= numbers[i - 1]
                         case "/": equal /= numbers[i - 1]
                         case "+": equal += numbers[i - 1]
                         case "-": equal -= numbers[i - 1]
+                        
                     default: break
+                        
                     }
                     
                 }
@@ -116,29 +138,40 @@ class ViewController: UIViewController {
                 if i == numbers.count && numbers.count > 1 {
                     
                     switch operations[i - 1] {
+                        
                         case "*": equal *= Double(textLabel.text!)!
                         case "/": equal /= Double(textLabel.text!)!
                         case "+": equal += Double(textLabel.text!)!
                         case "-": equal -= Double(textLabel.text!)!
+                        
                     default: break
+                        
                     }
                     
                 }
                 
             }
-        
-            textLabel.text = String(equal)
+            if String(equal).hasSuffix(".0") {
+                
+                let intEqual = Int(equal)
+                textLabel.text = String(intEqual)
+                
+            } else {
+                
+                textLabel.text = String(equal)
+                
+            }
         
             numbers = []
         
             operations = ["="]
             
-            print("equal tapped")
-            
-        case _ where sender.currentImage != nil: print("multiplication tapped")
+        case _ where sender.currentImage != nil:
             
             if textLabel.text == nil || textLabel.text == "" {
+                
                 break
+                
             }
         
             if operations.count != 0 && operations[0] == "="{
@@ -155,10 +188,12 @@ class ViewController: UIViewController {
         
             textLabel.text = ""
             
-        case "÷": print("shit")
+        case "÷":
             
             if textLabel.text == nil || textLabel.text == "" {
+                
                 break
+                
             }
         
             if operations.count != 0 && operations[0] == "="{
@@ -178,7 +213,9 @@ class ViewController: UIViewController {
         case "+":
             
             if textLabel.text == nil || textLabel.text == "" {
+                
                 break
+                
             }
         
             if operations.count != 0 && operations[0] == "="{
@@ -198,7 +235,9 @@ class ViewController: UIViewController {
         case "-":
             
             if textLabel.text == nil || textLabel.text == "" {
+                
                 break
+                
             }
             
             if operations.count != 0 && operations[0] == "="{
@@ -216,8 +255,8 @@ class ViewController: UIViewController {
             textLabel.text = ""
         
         default:
-            print("default tapped")
-        break
+
+            break
             
         }
         
