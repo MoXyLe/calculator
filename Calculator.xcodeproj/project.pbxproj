@@ -260,10 +260,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GENERATE_TEXT_BASED_STUBS = NO;
 				INFOPLIST_FILE = Calculator/Info.plist;
+				INLINE_PRIVATE_FRAMEWORKS = NO;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Viktor.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_TEXT_BASED_API = NO;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -272,10 +275,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GENERATE_TEXT_BASED_STUBS = NO;
 				INFOPLIST_FILE = Calculator/Info.plist;
+				INLINE_PRIVATE_FRAMEWORKS = NO;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Viktor.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_TEXT_BASED_API = NO;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
