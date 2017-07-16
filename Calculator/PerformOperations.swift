@@ -267,6 +267,16 @@ func addNumbers(_ sender: UIButton, _ textLabel: UILabel) {
             
         }
         
+    } else if textLabel.text == String(Double.pi) && (sender.titleLabel?.text != "π" || sender.titleLabel?.text != "") {
+        
+        textLabel.text = ""
+        textLabel.text?.append((sender.titleLabel?.text)!)
+        
+    } else if sender.titleLabel?.text == "." && textLabel.text == "" {
+
+        textLabel.text?.append("0")
+        textLabel.text?.append((sender.titleLabel?.text)!)
+
     } else {
         
         textLabel.text?.append((sender.titleLabel?.text)!)
