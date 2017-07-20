@@ -23,21 +23,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculator" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpA-5C-e4B">
-                                <rect key="frame" x="16" y="20" width="343" height="55"/>
-                                <color key="backgroundColor" red="0.82937420685279184" green="0.82937420685279184" blue="0.82937420685279184" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="21" y="28" width="333" height="60"/>
+                                <color key="backgroundColor" red="0.88619667291641235" green="0.88632434606552124" blue="0.88616865873336792" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="r08-q9-mpZ"/>
+                                    <constraint firstAttribute="height" constant="60" id="r08-q9-mpZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.17011994123458862" green="0.38815337419509888" blue="0.97633320093154907" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Simulator" translatesAutoresizingMaskIntoConstraints="NO" id="4ff-mH-9NN">
+                                <rect key="frame" x="-4" y="96" width="383" height="571"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="bpA-5C-e4B" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="A1U-pX-mxG"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bpA-5C-e4B" secondAttribute="trailing" id="amp-ui-4Fn"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="bpA-5C-e4B" secondAttribute="leading" id="tc5-p3-Af6"/>
+                            <constraint firstItem="bpA-5C-e4B" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="8" id="A1U-pX-mxG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4ff-mH-9NN" secondAttribute="trailing" constant="-20" id="KIy-2d-bai"/>
+                            <constraint firstItem="4ff-mH-9NN" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="-20" id="QGb-YN-7ee"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="4ff-mH-9NN" secondAttribute="bottom" id="Sz4-ol-Utr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bpA-5C-e4B" secondAttribute="trailing" constant="5" id="amp-ui-4Fn"/>
+                            <constraint firstItem="4ff-mH-9NN" firstAttribute="top" secondItem="bpA-5C-e4B" secondAttribute="bottom" constant="8" id="t56-55-z4D"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="bpA-5C-e4B" secondAttribute="leading" constant="-5" id="tc5-p3-Af6"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -46,4 +53,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Simulator" width="1242" height="1919"/>
+    </resources>
 </document>
