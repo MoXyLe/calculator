@@ -108,10 +108,14 @@ func performOperation(_ sender: UIButton, _ textLabel: UILabel) {
             }
             
         }
+            
         if String(equal).hasSuffix(".0") {
             
-            let intEqual = Int(equal)
-            textLabel.text = String(intEqual)
+            textLabel.text = String(equal)
+            
+            textLabel.text?.remove(at: textLabel.text!.index(before: textLabel.text!.endIndex))
+            
+            textLabel.text?.remove(at: textLabel.text!.index(before: textLabel.text!.endIndex))
             
         } else {
             
@@ -242,6 +246,10 @@ func performOperation(_ sender: UIButton, _ textLabel: UILabel) {
 }
 
 func addNumbers(_ sender: UIButton, _ textLabel: UILabel) {
+    
+    if (textLabel.text?.characters.count)! > 20 {
+        return
+    }
     
     if operations != [] && operations[0] == "=" && sender.currentImage != UIImage(named: "PlusMinus.png") {
         
