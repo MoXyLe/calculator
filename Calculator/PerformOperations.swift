@@ -243,7 +243,7 @@ func performOperation(_ sender: UIButton, _ textLabel: UILabel) {
 
 func addNumbers(_ sender: UIButton, _ textLabel: UILabel) {
     
-    if operations != [] && operations[0] == "=" {
+    if operations != [] && operations[0] == "=" && sender.currentImage != UIImage(named: "PlusMinus.png") {
         
         textLabel.text = ""
         
